@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+nav {
+  display:flex;
+  position: sticky;
+  height: 50px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 15px;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.menu {
+  display:flex;
+  margin-left: auto;
+  margin-right: 5px;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  order: 2;
+}
+
+.menu-item {
+  height: 50px;
+  z-index: 0;
+}
+
+.menu-link {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px 10px;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  display: none;
+  margin-top: 12px;
+  margin-bottom: auto;
+}
+
+
+@media screen and (max-width: 650px) {
+  .menu-toggle {
+    display: unset;
+  }
+
+  .site-title {
+    margin-left: auto;
+    margin-bottom: auto;
+  }
+
+  .menu {
+    display: none;
+    grid-template-columns: auto;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    justify-content: center;
+    min-height: fit-content;
+    animation: active-menu 1s;
+  }
+
+  @keyframes active-menu {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  .menu-link {
+    padding: 0;
+    font-size: smaller;
+  }
+
+  .active-menu {
+    display: grid;
+    top: 50px;
+    max-height: 50vh;
+    font-size: 1.6rem;
+  }
+
+  .active-nav {
+    height: 200px;
+  }
+}
+
+.bar {
+  display: block;
+  height: 2px;
+  width: 20px;
+  background: black;
+  margin: 5px auto;
+}
+
+.site-title {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  margin-right:auto;
+  margin-bottom: auto;
+  margin-top: 17.5px;
+  order: 1;
+  z-index:0;
+}
+
+#theme_icon {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  margin-bottom: auto;
+  margin-top: 15px;
+  background-image: linear-gradient(90deg, black 50%, white 50%);
+  order: 3;
+}
+
+.main-container {
+  display: flex;
+  color: white;
+  height: 50vh;
+  width: 100%;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(17, 17, 17, 0.8) 100%
+  ), url('main-container-background.jpeg');
+  background-size: cover;
+}
+
+.main-container__content {
+  text-align: center;
+  z-index: 0;
+}
+
+.main-container h1 {
+  font-weight: 300;
+}
+
+.main-container__content p {
+  padding: 10px 100px;
+}
+
+.gallery {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  transition-duration: 0s;
+}
+
+.gallery h2 {
+  width: 100%;
+  padding: 15px 0px;
+  transition-duration: 0s;
+}
+
+.gallery-container {
+  display: flex;
+  padding: 10px 10%;
+  margin-bottom: 20px;
+  height: fit-content;
+  min-height: 300px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.featured-content__card {
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  border-radius: 5%;
+  max-height: 100px;
+  min-height: 40vh;
+  min-width: 22.5vw;
+  max-width:max-content;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  --card_gradient:linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(17, 17, 17, 0.9) 75%
+  );
+}
+
+.featured-content__card div {
+  color: white;
+  margin: 15px;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+}
+
+.card_1 {
+  background-image: var(--card_gradient
+  ), url("linkedin-avi.png");
+}
+
+.card_2 {
+  background-image: var(--card_gradient
+  ), url("github-avi.png");
+}
+
+@media only screen and (max-width: 600px) {
+  .gallery-container {
+    align-items:center;
+    justify-content:space-around;
+    padding: 0;
+    min-height: fit-content;
+  }
+  .featured-content__card {
+    min-height: 400px;
+    min-width: 300px;
+    margin: 20px 0;
+  }
+}
+
+.featured-content__card:hover {
+  transform: scale(105%);
+}
