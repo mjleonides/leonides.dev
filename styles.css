@@ -151,8 +151,8 @@ nav {
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    rgba(17, 17, 17, 0.8) 60%
-  ), url('main-container-background.jpeg');
+    rgba(17, 17, 17, 0.8) 95%
+  ), url('/images/main-container-background.jpeg');
   background-size: cover;
 }
 
@@ -210,7 +210,7 @@ nav {
   --card_gradient:linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    rgba(17, 17, 17, 0.9) 75%
+    rgba(17, 17, 17, 0.9) 100%
   );
 }
 
@@ -224,12 +224,12 @@ nav {
 
 .card_1 {
   background-image: var(--card_gradient
-  ), url("linkedin-avi.png");
+  ), url("/images/linkedin-avi.png");
 }
 
 .card_2 {
   background-image: var(--card_gradient
-  ), url("github-avi.png");
+  ), url("/images/github-avi.png");
 }
 
 @media only screen and (max-width: 600px) {
