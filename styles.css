@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  transition: all 0.5s ease;
-  z-index: 0;
+  transition: background-color 0.5s ease;
 }
 
 nav {
@@ -15,7 +17,7 @@ nav {
   width: 100%;
   justify-content: space-between;
   padding: 0px 15px;
-  z-index: 10;
+  transition: height 0.5s ease;
 }
 
 .nav-container {
@@ -59,6 +61,7 @@ nav {
 
 
 @media screen and (max-width: 650px) {
+
   .menu-toggle {
     display: unset;
   }
@@ -163,7 +166,7 @@ nav {
 }
 
 .main-container__content p {
-  padding: 10px 100px;
+  padding: 10px 15vw;
 }
 
 .gallery {
@@ -198,7 +201,7 @@ nav {
   border-radius: 5%;
   max-height: 100px;
   min-height: 40vh;
-  min-width: 22.5vw;
+  min-width: 30vw;
   max-width:max-content;
   cursor: pointer;
   background-size: cover;
