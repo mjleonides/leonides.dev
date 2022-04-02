@@ -82,7 +82,7 @@ nav {
     left: 0px;
     justify-content: center;
     min-height: fit-content;
-    animation: active-menu 1s;
+    animation: active-menu 1.5s;
   }
 
   @keyframes active-menu {
