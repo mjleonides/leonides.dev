@@ -10,42 +10,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="resume_styles.css" />
-    <link id="theme_style" rel="stylesheet" href="#" />
 
   </head>
   <body>
-    <nav id="nav">
-      <div class="menu-toggle">
+    <nav id="navbar">
+      <h2><a href="index.html">mjleonides.github.io</a></h2>
+      <ul class="menu">
+        <li>
+          <a class="menu-link" href="index.html">Home</a>
+        </li>
+        <li>
+          <a class="menu-link" href="index.html#featured">Featured</a>
+        </li>
+        <li>
+          <a class="menu-link" href="resume.html">Resume</a>
+        </li>
+        <li>
+            <a class="menu-link" href="mailto: mjleonides@outlook.com">Contact</a>
+          </li>
+      </ul>
+      <div id="theme-toggle"></div>
+      <div id="menu-toggle">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
-      <div class="nav-container">
-        <a class="site-title" href="index.html">mjleonides.github.io</a>
-        <ul class="menu">
-      <li class="menu-item">
-        <a href="index.html" class="menu-link">Home</a>
-      </li>
-      <li class="menu-item">
-        <a href="resume.html" class="menu-link">Resume</a>
-      </li>
-      <li class="menu-item">
-        <a href="projects.html" class="menu-link">Projects</a>
-      </li>
-        </ul>
-      </div>
-      <div id="theme_icon" onclick="toggleTheme()"></div>
     </nav>
-    <div class="page-container">
-      <div class="header">
+    <main class="page-container">
+      <section class="header">
         <div class="name">
           <h1>MICHAEL J. LEONIDES</h1>
         </div>
         <div class="contact">
           <p>mjleonides@outlook.com | (409) 203-6403 | College Station, TX</p>
         </div>
-      </div>
-      <div class="profile">
+      </section>
+      <section class="profile">
         <h2>Profile</h2>
         <p>
           Hard working, fast learning, team player with a Bachelor of Science
@@ -56,11 +56,11 @@
           end-users, and am looking for a meaningful position in Central TX or
           remote to bring great passion and attention to detail to.
         </p>
-      </div>
-      <div class="row">
+      </section>
+      <section class="row">
         <div class="column left">
           <div>
-            <img class="avi" src="/images/img_avi.png" alt="Profile Picture" />
+            <img class="avi" src="images/img_avi.png" alt="Profile Picture" />
           </div>
           <div>
             <h2>Education</h2>
@@ -186,15 +186,17 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="footer">
-        <p>
-          <a href="https://www.linkedin.com/in/mjleonides/">LinkedIn</a> |
-          <a href="https://github.com/mjleonides">GitHub</a>
-        </p>
-      </div>
-    </div>
+        <div class="footer">
+          <p>
+            <a href="https://www.linkedin.com/in/mjleonides/">LinkedIn</a> |
+            <a href="https://github.com/mjleonides">GitHub</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>mjleonides / Michael J. Leonides &copy; 2022</p>
+    </footer>
   </body>
   <script src="index.js"></script>
-  <script src="theme.js"></script>
 </html>
