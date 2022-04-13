@@ -1,6 +1,7 @@
 :root {
   --theme-background: white;
   --theme-color: black;
+  --highlight: #357CA3;
 }
 
 body {
@@ -48,7 +49,7 @@ a {
 }
 
 .menu-link:hover {
-  color: #357CA3;
+  color: var(--highlight);
 }
 
 #menu-toggle {
@@ -142,19 +143,22 @@ h1 {
   justify-self: center;
   height: 250px;
   width: 100%;
+  padding: 5px;
   display: flex;
   flex-direction: column-reverse;
   background-size: cover;
   background-position: center;
   --tile-gradient: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(17, 17, 17, .75) 100%
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.109) 70%,
+    rgba(17, 17, 17, 0.728) 100%
   );
 }
 
 .project-tile:hover {
   transform: scale(105%);
+  box-shadow: 0px 10px 70px -20px grey;
 }
 
 /*          Tiles          */
