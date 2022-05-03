@@ -16,7 +16,7 @@
 .page-container h2,
 .footer a,
 .footer p {
-    color:#357CA3;
+    color:var(--highlight);
 }
 
 .header,
@@ -81,6 +81,15 @@ p {
     border-width: thin;
 }
 
+.technical-skills-software {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#clearance {
+    margin: 20px auto;
+}
+
 .row {
     display: grid;
     grid-template-columns: 25% 75%;
@@ -107,6 +116,12 @@ p {
 }
 
 @media screen and (max-width: 700px) {
+
+    .technical-skills {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
     .row {
         grid-template-columns: auto;
     }
