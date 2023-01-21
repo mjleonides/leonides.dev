@@ -1,10 +1,42 @@
-# mjleonides.github.io
-Config files for my portfolio site on mjleonides.github.io
+# Nuxt 3 Minimal Starter
 
-I built this site from scratch using HTML5, CSS3, and a little bit of JavaScript. I plan to add/modify code as my proficiency grows
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-Features to note:<br>
--Automatically resized grid layouts and flexboxes<br>
--Dark mode toggle that utilizes local cache<br>
--Animated mobile menu<br>
--Scalable nav menu and featured cards for future links and projects<br>
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install
+```
+
+## Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
