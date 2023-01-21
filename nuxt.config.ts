@@ -29,6 +29,7 @@ export default defineNuxtConfig({
 				},
 			],
 		},
+		baseURL: "/mjleonides.github.io/",
 	},
 
 	css: ["~/assets/styles/global.scss"],
