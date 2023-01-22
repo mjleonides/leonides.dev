@@ -33,7 +33,7 @@ export default defineNuxtConfig({
 				{
 					hid: "og:image",
 					name: "og:image",
-					content: "assets/images/avi.jpeg",
+					content: "/assets/images/avi.jpeg",
 				},
 			],
 			script: [
