@@ -21,9 +21,15 @@ export default defineNuxtConfig({
 						"Howdy! My name is Michael, and I build stuff for the web. Here on my website you can contact me and view my resume.",
 				},
 			],
-			script: [{ src: "assets/scripts/handleScroll.js", defer: true }],
+			script: [
+				{
+					src: "https://www.googletagmanager.com/gtag/js?id=G-G8VF2Y9X97",
+					async: true,
+				},
+				{ src: "assets/scripts/analytics.js" },
+				{ src: "assets/scripts/handleScroll.js", defer: true },
+			],
 			link: [
-				{ href: "assets/scripts/analytics.html" },
 				{
 					rel: "stylesheet",
 					href: "assets/styles/css/all.min.css",
