@@ -30,7 +30,6 @@ export default defineNuxtConfig({
 			],
 		},
 	},
-
 	css: ["~/assets/styles/global.scss"],
 	modules: ["@nuxt/image-edge"],
 	image: {},
