@@ -20,6 +20,21 @@ export default defineNuxtConfig({
 					content:
 						"Howdy! My name is Michael, and I build stuff for the web. Here on my website you can contact me and view my resume.",
 				},
+				{
+					hid: "og:site_name",
+					name: "og:site_name",
+					content: "leonides.dev",
+				},
+				{
+					hid: "og:type",
+					name: "og:type",
+					content: "website",
+				},
+				{
+					hid: "og:image",
+					name: "og:image",
+					content: "assets/images/avi.jpeg",
+				},
 			],
 			script: [
 				{
