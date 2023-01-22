@@ -23,6 +23,7 @@ export default defineNuxtConfig({
 			],
 			script: [{ src: "assets/scripts/handleScroll.js", defer: true }],
 			link: [
+				{ href: "assets/scripts/analytics.html" },
 				{
 					rel: "stylesheet",
 					href: "assets/styles/css/all.min.css",
