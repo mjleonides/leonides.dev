@@ -1,21 +1,22 @@
 <template>
 	<div class="icons-container">
-		<i
+		<button
 			class="fa-solid fa-circle-half-stroke"
 			@click="handleClick"
 			role="button"
 			aria-label="Button toggle to switch between light and dark theme"
-		></i>
+		></button>
 		<a
 			href="https://github.com/mjleonides"
 			role="link"
 			aria-label="Link to Michael's profile on Github"
-			><i class="fa-brands fa-github"></i></a
+			class="fa-brands fa-github"
+		></a
 		><a
 			href="https://linkedin.com/in/mjleonides"
 			role="link"
 			aria-label="Link to Michael's profile on Linkedin"
-			><i class="fa-brands fa-linkedin"></i
+			class="fa-brands fa-linkedin"
 		></a>
 	</div>
 </template>
@@ -44,15 +45,23 @@ export default {
 	flex-direction: row-reverse;
 }
 
-i {
+a,
+button {
 	padding: 0 0.5rem;
-	font-size: calc(2.75rem - 1.5vw);
+	font-size: max(2.75rem - 1.5vw, 1.75rem);
 	cursor: pointer;
-	opacity: 0.5;
+	opacity: 0.55;
+	text-decoration: none;
 
 	&:hover,
 	&:focus {
 		opacity: 1;
 	}
+}
+
+button {
+	color: var(--theme-color);
+	background: none;
+	border: none;
 }
 </style>
