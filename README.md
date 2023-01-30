@@ -1,42 +1,5 @@
-# Nuxt 3 Minimal Starter
+# leonides.dev
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Configuration and source code for my personal website at https://leonides.dev
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Leonides.dev is a statically generated webiste built with Nuxt 3, Sass, and JS with a functional CI/CD pipeline utilizing Github Actions and Pages.
