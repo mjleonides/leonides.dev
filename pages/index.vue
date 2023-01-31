@@ -7,17 +7,16 @@
 					<nuxt-img
 						src="assets/images/avi.jpeg"
 						sizes="sm:40vw lg:256px"
-						alt="Headshot of Michael Leonides smiling in front of greenery. He is quite gorgeous."
+						alt="Headshot of Mike Leonides smiling in front of greenery. He is quite gorgeous."
 					></nuxt-img>
-					<!-- <p class="greeting">Howdy!</p>-->
-					<h1>Howdy! My name is Michael, and I build stuff for the web.</h1>
+					<h1>Howdy! My name is Mike, and I build stuff for the web.</h1>
 					<p>
 						I am passionate about creating a fully accessible and resilient web
 						for all, and I support an ethical and respectful implimentation of
 						technology for the common good.
 					</p>
 					<p>
-						<a href="mailto:michael@leonides.dev">Click here to contact me.</a>
+						<a href="mailto:mike@leonides.dev">Click here to contact me.</a>
 						Scroll to view my resume.
 					</p>
 				</div>
