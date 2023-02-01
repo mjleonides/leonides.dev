@@ -6,4 +6,9 @@ const handleScroll = () => {
 	}
 };
 
-window.addEventListener("scroll", handleScroll);
+document.addEventListener("DOMContentLoaded", function (event) {
+	//enables scroll opacity effect on list if js enabled
+	document.querySelector(".entry-list").classList.remove("active-list");
+
+	window.addEventListener("scroll", handleScroll);
+});
