@@ -1,5 +1,5 @@
 <template>
-	<div id="entry-list" class="entry-list">
+	<div id="entry-list" class="entry-list active-list">
 		<SingleEntry v-for="entry in entries" :key="entry.position"
 			><template #date>{{ entry.date }}</template
 			><template #title>{{ entry.title }}</template

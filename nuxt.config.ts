@@ -36,14 +36,7 @@ export default defineNuxtConfig({
 					content: "https://leonides.dev/assets/images/avi.jpeg",
 				},
 			],
-			script: [
-				{
-					src: "https://www.googletagmanager.com/gtag/js?id=G-G8VF2Y9X97",
-					async: true,
-				},
-				{ src: "assets/scripts/analytics.js" },
-				{ src: "assets/scripts/handleScroll.js", defer: true },
-			],
+			script: [{ src: "assets/scripts/handleScroll.js", defer: true }],
 			link: [
 				{
 					rel: "stylesheet",
