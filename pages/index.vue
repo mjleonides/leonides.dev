@@ -16,7 +16,7 @@
 						technology for the common good.
 					</p>
 					<p>
-						<a href="mailto:mike@leonides.dev">Click here to contact me.</a>
+						<a href="mailto:contact@leonides.dev">Click here to contact me.</a>
 						Scroll to view my resume.
 					</p>
 				</div>
