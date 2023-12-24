@@ -9,9 +9,9 @@
 		"deploy": "push-dir --dir=dist --branch=master --cleanup"
 	},
 	"devDependencies": {
-		"@nuxt/image": "^0.7.1",
-		"@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
-		"nuxt": "^3.0.0",
+		"@nuxt/image": "^1.1.0",
+		"@nuxt/image-edge": "^1.1.0-28389042.1c39ac3",
+		"nuxt": "^3.8.2",
 		"push-dir": "^0.4.1",
 		"sass": "^1.57.1",
 		"sass-loader": "^10.4.1"
