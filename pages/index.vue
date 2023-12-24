@@ -7,12 +7,12 @@
 					<img
 						width="256"
 						src="assets/images/avi.jpeg"
-						alt="Headshot of Mike Leonides smiling in front of greenery. He is quite gorgeous."
+						alt="Head shot of Mike Leonides smiling in front of greenery. He is quite gorgeous."
 					/>
 					<h1>Howdy! My name is Mike, and I build stuff for the web.</h1>
 					<p>
 						I am passionate about creating a fully accessible and resilient web
-						for all, and I support an ethical and respectful implimentation of
+						for all, and I support an ethical and respectful implementation of
 						technology for the common good.
 					</p>
 					<p>
@@ -45,7 +45,7 @@ export default {
 				},
 				{
 					date: "2021 - 2022",
-					title: "Techincal Support Engineer",
+					title: "Technical Support Engineer",
 					subtitle: "Instructure, Inc.",
 					location: "Salt Lake City, UT",
 					work: [
