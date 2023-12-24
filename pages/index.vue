@@ -4,11 +4,11 @@
 			<header><HeaderIcons /></header>
 			<div class="intro-container">
 				<div class="intro-section">
-					<nuxt-img
+					<img
+						width="256"
 						src="assets/images/avi.jpeg"
-						sizes="sm:40vw lg:256px"
 						alt="Headshot of Mike Leonides smiling in front of greenery. He is quite gorgeous."
-					></nuxt-img>
+					/>
 					<h1>Howdy! My name is Mike, and I build stuff for the web.</h1>
 					<p>
 						I am passionate about creating a fully accessible and resilient web
@@ -36,12 +36,12 @@ export default {
 					date: "present",
 					title: "Web Administrator, Associate",
 					subtitle: "K2United, LLC",
-					location: "College Station, TX",
+					location: "College Station, TX"
 				},
 				{
 					date: "present",
 					title: "Web Developer",
-					subtitle: "The Delight Media Co.",
+					subtitle: "The Delight Media Co."
 				},
 				{
 					date: "2021 - 2022",
@@ -53,8 +53,8 @@ export default {
 						"Fixed end-user interface issues via live contact and replicated/troubleshot bugs",
 						"Escalated cases with detailed and complete records not resolvable at the L1 level to the L2 Support team",
 						"Resolved over 93% of 1000+ cases on first-contact",
-						"95+% Customer Satisfaction based on post-interaction surveys",
-					],
+						"95+% Customer Satisfaction based on post-interaction surveys"
+					]
 				},
 				{
 					date: "2021",
@@ -65,14 +65,14 @@ export default {
 						"Conducted all-source intelligence research and engineering analysis to characterize system performance and capabilities",
 						"Developed electronic warfare system models to support the national EWIRDB",
 						"Analyzed ground, naval, and airborne communications, electro-optical/infrared systems, and other onboard electronic systems",
-						"Solved electronic warfare feedback reports from the operational user community",
-					],
+						"Solved electronic warfare feedback reports from the operational user community"
+					]
 				},
 				{
 					date: "2021",
 					title: "Bachelor of Science in Ocean Engineering",
 					subtitle: "Texas A&M University",
-					location: "College Station, TX",
+					location: "College Station, TX"
 				},
 				{
 					title: "Things I Know",
@@ -84,12 +84,12 @@ export default {
 						"CSS3",
 						"Sass",
 						"Git",
-						"Postman",
-					],
-				},
-			],
+						"Postman"
+					]
+				}
+			]
 		};
-	},
+	}
 };
 </script>
 <style lang="scss" scoped>
