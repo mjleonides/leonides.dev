@@ -27,70 +27,25 @@
 	</div>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			entries: [
-				{
-					date: "present",
-					title: "Web Administrator, Associate",
-					subtitle: "K2United, LLC",
-					location: "College Station, TX"
-				},
-				{
-					date: "present",
-					title: "Web Developer",
-					subtitle: "The Delight Media Co."
-				},
-				{
-					date: "2021 - 2022",
-					title: "Technical Support Engineer",
-					subtitle: "Instructure, Inc.",
-					location: "Salt Lake City, UT",
-					work: [
-						"Provided real-time technical support to end users and administrators of top cloud-based Learning Management System",
-						"Fixed end-user interface issues via live contact and replicated/troubleshot bugs",
-						"Escalated cases with detailed and complete records not resolvable at the L1 level to the L2 Support team",
-						"Resolved over 93% of 1000+ cases on first-contact",
-						"95+% Customer Satisfaction based on post-interaction surveys"
-					]
-				},
-				{
-					date: "2021",
-					title: "Electronic Warfare Engineer",
-					subtitle: "SRC, Inc",
-					location: "San Antonio, TX",
-					work: [
-						"Conducted all-source intelligence research and engineering analysis to characterize system performance and capabilities",
-						"Developed electronic warfare system models to support the national EWIRDB",
-						"Analyzed ground, naval, and airborne communications, electro-optical/infrared systems, and other onboard electronic systems",
-						"Solved electronic warfare feedback reports from the operational user community"
-					]
-				},
-				{
-					date: "2021",
-					title: "Bachelor of Science in Ocean Engineering",
-					subtitle: "Texas A&M University",
-					location: "College Station, TX"
-				},
-				{
-					title: "Things I Know",
-					work: [
-						"Technical Writing",
-						"MS Office",
-						"Web Development",
-						"HTML5",
-						"CSS3",
-						"Sass",
-						"Git",
-						"Postman"
-					]
-				}
-			]
-		};
-	}
-};
+<script setup>
+import { ref, onMounted } from "vue";
+import axios from "axios";
+
+const entries = ref(null);
+
+onMounted(() => {
+	// get events from mock db when component is created
+	axios
+		.get(
+			"https://my-json-server.typicode.com/mjleonides/mjleonides.github.io/entries"
+		)
+		.then((response) => {
+			entries.value = response.data;
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+});
 </script>
 <style lang="scss" scoped>
 .intro-container {
