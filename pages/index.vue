@@ -31,7 +31,7 @@
 import { ref, onMounted } from "vue";
 import axios from "axios";
 
-const entries = ref(null);
+const entries = ref();
 
 onMounted(() => {
 	// get events from mock db when component is created

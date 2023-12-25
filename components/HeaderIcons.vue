@@ -21,21 +21,17 @@
 	</div>
 </template>
 
-<script>
-export default {
-	methods: {
-		handleClick() {
-			let root = getComputedStyle(document.documentElement);
-			let theme = document.documentElement.style;
-			if (root.getPropertyValue("--theme-bg-color") === "#1f1f1f") {
-				theme.setProperty("--theme-bg-color", "var(--light)");
-				theme.setProperty("--theme-color", "var(--dark)");
-			} else {
-				theme.setProperty("--theme-bg-color", "var(--dark)");
-				theme.setProperty("--theme-color", "var(--light");
-			}
-		},
-	},
+<script setup>
+const handleClick = () => {
+	let root = getComputedStyle(document.documentElement);
+	let theme = document.documentElement.style;
+	if (root.getPropertyValue("--theme-bg-color") === "#1f1f1f") {
+		theme.setProperty("--theme-bg-color", "var(--light)");
+		theme.setProperty("--theme-color", "var(--dark)");
+	} else {
+		theme.setProperty("--theme-bg-color", "var(--dark)");
+		theme.setProperty("--theme-color", "var(--light");
+	}
 };
 </script>
 

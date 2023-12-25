@@ -16,16 +16,8 @@
 	</div>
 </template>
 
-<script>
-export default {
-	mounted() {},
-	props: ["entries"],
-	methods: {
-		handleScroll: function () {
-			document.querySelector(".entry-list").classList.toggle("active-list");
-		},
-	},
-};
+<script setup>
+const props = defineProps(["entries"]);
 </script>
 
 <style lang="scss" scoped>
