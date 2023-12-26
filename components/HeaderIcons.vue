@@ -2,7 +2,7 @@
 	<div class="icons-container">
 		<button
 			class="fa-solid fa-circle-half-stroke"
-			@click="handleClick"
+			@click="themeToggle"
 			role="button"
 			aria-label="Button toggle to switch between light and dark theme"
 		></button>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-const handleClick = () => {
+const themeToggle = () => {
 	let root = getComputedStyle(document.documentElement);
 	let theme = document.documentElement.style;
 	if (root.getPropertyValue("--theme-bg-color") === "#1f1f1f") {

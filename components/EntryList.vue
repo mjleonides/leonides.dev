@@ -1,5 +1,9 @@
 <template>
-	<div id="entry-list" class="entry-list active-list">
+	<div
+		id="entry-list"
+		class="entry-list"
+		:class="isActiveList ? 'active-list' : ''"
+	>
 		<SingleEntry v-for="entry in entries" :key="entry.position"
 			><template #date>{{ entry.date }}</template
 			><template #title>{{ entry.title }}</template
@@ -17,7 +21,18 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
+
 const props = defineProps(["entries"]);
+const isActiveList = ref(true);
+
+const handleScroll = () => {
+	isActiveList.value = window.scrollY >= 300 ? true : false;
+};
+onMounted(() => {
+	isActiveList.value = false;
+	window.addEventListener("scroll", handleScroll);
+});
 </script>
 
 <style lang="scss" scoped>
