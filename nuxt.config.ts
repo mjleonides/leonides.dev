@@ -36,7 +36,6 @@ export default defineNuxtConfig({
 					content: "https://leonides.dev/assets/images/avi.jpeg"
 				}
 			],
-			script: [{ src: "assets/scripts/handleScroll.ts", defer: true }],
 			link: [
 				{
 					rel: "stylesheet",
