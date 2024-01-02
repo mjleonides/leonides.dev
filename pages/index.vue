@@ -15,36 +15,41 @@
 						for all, and I support an ethical and respectful implementation of
 						technology for the common good.
 					</p>
-					<p>
-						<a href="mailto:contact@leonides.dev">Click here to contact me.</a>
-						Scroll to view my resume.
-					</p>
+					<div class="actions-container">
+						<p>
+							<a href="mailto:contact@leonides.dev"
+								>Click here to contact me.</a
+							>
+						</p>
+						<ResumeNotice :isLoading="true" />
+					</div>
 				</div>
 			</div>
 
-			<EntryList :entries="entries" />
+			<EntryList v-if="entries" :entries="entries" />
 		</div>
 	</div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import axios from "axios";
+import useGetResumeData from "/assets/composables/useGetResumeData.ts";
 
 const entries = ref();
+const myError = ref(null);
+const resumeLoading = ref(true);
 
-onMounted(() => {
+onMounted(async () => {
 	// get events from mock db when component is created
-	axios
-		.get(
-			"https://my-json-server.typicode.com/mjleonides/mjleonides.github.io/entries"
-		)
-		.then((response) => {
-			entries.value = response.data;
-		})
-		.catch((error) => {
-			console.log(error);
-		});
+	const { data, isLoading, error } = await useGetResumeData(
+		"https://my-json-server.typicode.com/mjleonides/mjleonides.github.io/",
+		"entries"
+	);
+
+	console.log(error);
+	//have to use async await on the useGetResume composable or else it trues to set this value before the api call is done
+	entries.value = data.value;
+	// resumeLoading.value = isLoading;
+	// console.log("after" + resumeLoading.value);
 });
 </script>
 <style lang="scss" scoped>
@@ -58,5 +63,11 @@ onMounted(() => {
 h1 {
 	font-size: calc(1rem + 0.5vw);
 	margin: 1rem 0;
+}
+
+.actions-container {
+	display: inline-flex;
+	gap: 1ch;
+	align-items: center;
 }
 </style>

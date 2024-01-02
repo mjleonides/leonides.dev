@@ -4,7 +4,7 @@
 		class="entry-list"
 		:class="isActiveList ? 'active-list' : ''"
 	>
-		<SingleEntry v-for="entry in entries" :key="entry.position"
+		<SingleEntry v-for="entry in entries"
 			><template #date>{{ entry.date }}</template
 			><template #title>{{ entry.title }}</template
 			><template #subtitle>{{ entry.subtitle }}</template
@@ -23,7 +23,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 
-const props = defineProps(["entries"]);
+const props = defineProps({ entries: Array });
 const isActiveList = ref(true);
 
 const handleScroll = () => {
