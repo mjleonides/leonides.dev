@@ -1,6 +1,10 @@
 <template>
-	<div id="entry-list" class="entry-list active-list">
-		<SingleEntry v-for="entry in entries" :key="entry.position"
+	<div
+		id="entry-list"
+		class="entry-list"
+		:class="isActiveList ? 'active-list' : ''"
+	>
+		<SingleEntry v-for="entry in entries"
 			><template #date>{{ entry.date }}</template
 			><template #title>{{ entry.title }}</template
 			><template #subtitle>{{ entry.subtitle }}</template
@@ -16,16 +20,19 @@
 	</div>
 </template>
 
-<script>
-export default {
-	mounted() {},
-	props: ["entries"],
-	methods: {
-		handleScroll: function () {
-			document.querySelector(".entry-list").classList.toggle("active-list");
-		},
-	},
+<script setup>
+import { ref, onMounted } from "vue";
+
+const props = defineProps({ entries: Array });
+const isActiveList = ref(true);
+
+const handleScroll = () => {
+	isActiveList.value = window.scrollY >= 300 ? true : false;
 };
+onMounted(() => {
+	isActiveList.value = false;
+	window.addEventListener("scroll", handleScroll);
+});
 </script>
 
 <style lang="scss" scoped>

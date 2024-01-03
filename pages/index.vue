@@ -4,93 +4,51 @@
 			<header><HeaderIcons /></header>
 			<div class="intro-container">
 				<div class="intro-section">
-					<nuxt-img
+					<img
+						width="256"
 						src="assets/images/avi.jpeg"
-						sizes="sm:40vw lg:256px"
-						alt="Headshot of Mike Leonides smiling in front of greenery. He is quite gorgeous."
-					></nuxt-img>
+						alt="Head shot of Mike Leonides smiling in front of greenery. He is quite gorgeous."
+					/>
 					<h1>Howdy! My name is Mike, and I build stuff for the web.</h1>
 					<p>
 						I am passionate about creating a fully accessible and resilient web
-						for all, and I support an ethical and respectful implimentation of
+						for all, and I support an ethical and respectful implementation of
 						technology for the common good.
 					</p>
-					<p>
-						<a href="mailto:contact@leonides.dev">Click here to contact me.</a>
-						Scroll to view my resume.
-					</p>
+					<div class="actions-container">
+						<p>
+							<a href="mailto:contact@leonides.dev"
+								>Click here to contact me.</a
+							>
+						</p>
+						<ResumeNotice :isLoading="resumeLoading" />
+					</div>
 				</div>
 			</div>
 
-			<EntryList :entries="entries" />
+			<EntryList v-if="entries" :entries="entries" />
 		</div>
 	</div>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			entries: [
-				{
-					date: "present",
-					title: "Web Administrator, Associate",
-					subtitle: "K2United, LLC",
-					location: "College Station, TX",
-				},
-				{
-					date: "present",
-					title: "Web Developer",
-					subtitle: "The Delight Media Co.",
-				},
-				{
-					date: "2021 - 2022",
-					title: "Techincal Support Engineer",
-					subtitle: "Instructure, Inc.",
-					location: "Salt Lake City, UT",
-					work: [
-						"Provided real-time technical support to end users and administrators of top cloud-based Learning Management System",
-						"Fixed end-user interface issues via live contact and replicated/troubleshot bugs",
-						"Escalated cases with detailed and complete records not resolvable at the L1 level to the L2 Support team",
-						"Resolved over 93% of 1000+ cases on first-contact",
-						"95+% Customer Satisfaction based on post-interaction surveys",
-					],
-				},
-				{
-					date: "2021",
-					title: "Electronic Warfare Engineer",
-					subtitle: "SRC, Inc",
-					location: "San Antonio, TX",
-					work: [
-						"Conducted all-source intelligence research and engineering analysis to characterize system performance and capabilities",
-						"Developed electronic warfare system models to support the national EWIRDB",
-						"Analyzed ground, naval, and airborne communications, electro-optical/infrared systems, and other onboard electronic systems",
-						"Solved electronic warfare feedback reports from the operational user community",
-					],
-				},
-				{
-					date: "2021",
-					title: "Bachelor of Science in Ocean Engineering",
-					subtitle: "Texas A&M University",
-					location: "College Station, TX",
-				},
-				{
-					title: "Things I Know",
-					work: [
-						"Technical Writing",
-						"MS Office",
-						"Web Development",
-						"HTML5",
-						"CSS3",
-						"Sass",
-						"Git",
-						"Postman",
-					],
-				},
-			],
-		};
-	},
-};
+<script setup>
+import useGetResumeData from "/assets/composables/useGetResumeData.ts";
+
+const entries = ref();
+const resumeLoading = ref(true);
+
+onMounted(async () => {
+	//have to use async await on the useGetResume composable or else it tries to set values before the api call is done
+	// get events from mock db when component is created
+	const { data, isLoading, error } = await useGetResumeData();
+	// data, isLoading, and error from useGetResumeData() are now available in this component. These are not new variables but the same ones from
+	// the function. However they are refs. So to access the original value of the error for example, methods need to be called on error.value.methodName()
+	if (error.value != undefined) {
+		console.log("Get resume failed due to " + error.value);
+	}
+	entries.value = data.value;
+	resumeLoading.value = isLoading.value;
+});
 </script>
 <style lang="scss" scoped>
 .intro-container {
@@ -103,5 +61,14 @@ export default {
 h1 {
 	font-size: calc(1rem + 0.5vw);
 	margin: 1rem 0;
+}
+
+.actions-container {
+	display: inline-flex;
+	align-items: center;
+
+	p {
+		margin-right: 1ch;
+	}
 }
 </style>
