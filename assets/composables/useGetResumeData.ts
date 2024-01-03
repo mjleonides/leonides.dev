@@ -8,15 +8,15 @@ const getResumeData = async (url: string, variable: string) => {
 	const isLoading = ref(true);
 
 	await axios
-		.get(url + variable)
+		.get(
+			"https://my-json-server.typicode.com/mjleonides/mjleonides.github.io/entries"
+		)
 		.then((response) => {
 			data.value = response.data;
 			isLoading.value = false;
 		})
-		.catch((error) => {
-			console.log("at catch: " + error);
-			error.value = error;
-			console.log("after assignment: " + error.value);
+		.catch((err) => {
+			error.value = err;
 		});
 
 	return { data, isLoading, error };

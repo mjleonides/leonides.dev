@@ -21,7 +21,7 @@
 								>Click here to contact me.</a
 							>
 						</p>
-						<ResumeNotice :isLoading="true" />
+						<ResumeNotice :isLoading="resumeLoading" />
 					</div>
 				</div>
 			</div>
@@ -35,21 +35,19 @@
 import useGetResumeData from "/assets/composables/useGetResumeData.ts";
 
 const entries = ref();
-const myError = ref(null);
 const resumeLoading = ref(true);
 
 onMounted(async () => {
+	//have to use async await on the useGetResume composable or else it tries to set values before the api call is done
 	// get events from mock db when component is created
-	const { data, isLoading, error } = await useGetResumeData(
-		"https://my-json-server.typicode.com/mjleonides/mjleonides.github.io/",
-		"entries"
-	);
-
-	console.log(error);
-	//have to use async await on the useGetResume composable or else it trues to set this value before the api call is done
+	const { data, isLoading, error } = await useGetResumeData();
+	// data, isLoading, and error from useGetResumeData() are now available in this component. These are not new variables but the same ones from
+	// the function. However they are refs. So to access the original value of the error for example, methods need to be called on error.value.methodName()
+	if (error.value != undefined) {
+		console.log("Get resume failed due to " + error.value);
+	}
 	entries.value = data.value;
-	// resumeLoading.value = isLoading;
-	// console.log("after" + resumeLoading.value);
+	resumeLoading.value = isLoading.value;
 });
 </script>
 <style lang="scss" scoped>
@@ -67,7 +65,10 @@ h1 {
 
 .actions-container {
 	display: inline-flex;
-	gap: 1ch;
 	align-items: center;
+
+	p {
+		margin-right: 1ch;
+	}
 }
 </style>
