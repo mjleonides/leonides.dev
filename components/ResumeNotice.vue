@@ -1,31 +1,46 @@
 <template>
-	<span id="resume-loading">
-		<div v-if="isLoading">|</div>
-	</span>
-	<span id="resume-notice">
-		<div v-if="!isLoading">Scroll to view my resume.</div>
-	</span>
+		<div>{{ message }}<span v-if="!hideTyper" :class="isTyping ? '':'flashing'">|</span></div>
 </template>
 
 <script setup lang="ts">
-defineProps({
-	isLoading: {
-		type: Boolean,
-		default: true
-	}
-});
 
-// console.log("resume notice: " + isLoading);
+const isTyping = ref(false);
+const hideTyper = ref(false)
+
+const msgString = "Scroll to view my resume.";
+const msgArray = msgString.split("");
+const typerArray = ref<string[]>([]);
+const message = ref();
+
+
+onMounted(() => {
+
+
+let i = 0;
+
+(function myTyper(i: number){
+	isTyping.value = true;
+	setTimeout(()=> {
+
+		typerArray.value.push(msgArray[i]);
+		message.value = typerArray.value.join("");
+		i++
+		
+		if (i <= msgArray.length) {
+			myTyper(i);
+		} else {
+			isTyping.value = false;
+			setTimeout(() => {
+				hideTyper.value = true;
+			}, 3000)
+		}
+		
+	}, 100)
+})(i);
+
+})
 </script>
 
 <style lang="scss" scoped>
-#resume-loading {
-	animation: flashing 1.25s step-start infinite;
-}
-
-@keyframes flashing {
-	50% {
-		opacity: 0;
-	}
-}
+/* */
 </style>

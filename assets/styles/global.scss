@@ -71,3 +71,13 @@ h6 {
 		display: none;
 	}
 }
+
+.flashing {
+	animation: flashing 1.25s step-start infinite;
+}
+
+@keyframes flashing {
+	50% {
+		opacity: 0;
+	}
+}

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getResumeData = async (url: string, variable: string) => {
+const getResumeData = async () => {
 	// need to define variables for export to actually use the data and error outside of the function
 	const data = ref();
 	const error = ref();

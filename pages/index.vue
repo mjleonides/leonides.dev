@@ -21,7 +21,7 @@
 								>Click here to contact me.</a
 							>
 						</p>
-						<ResumeNotice :isLoading="resumeLoading" />
+						<ResumeNotice v-if="!resumeLoading" />
 					</div>
 				</div>
 			</div>
@@ -31,8 +31,8 @@
 	</div>
 </template>
 
-<script setup>
-import useGetResumeData from "/assets/composables/useGetResumeData.ts";
+<script setup lang="ts">
+import useGetResumeData from "@/assets/queries/useGetResumeData";
 
 const entries = ref();
 const resumeLoading = ref(true);
