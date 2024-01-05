@@ -21,7 +21,7 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const themeToggle = () => {
 	let root = getComputedStyle(document.documentElement);
 	let theme = document.documentElement.style;

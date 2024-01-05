@@ -20,10 +20,19 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from "vue";
 
-const props = defineProps({ entries: Array });
+interface Entry {
+	date: string;
+	title: string;
+	subtitle: string;
+	location: string;
+	work: string;
+}
+
+defineProps({ entries: Array<Entry> });
+
 const isActiveList = ref(true);
 
 const handleScroll = () => {
