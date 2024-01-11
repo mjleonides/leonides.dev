@@ -14,30 +14,24 @@ const message = ref();
 
 
 onMounted(() => {
-
-
-let i = 0;
-
-(function myTyper(i: number){
-	isTyping.value = true;
-	setTimeout(()=> {
-
-		typerArray.value.push(msgArray[i]);
-		message.value = typerArray.value.join("");
-		i++
-		
-		if (i <= msgArray.length) {
-			myTyper(i);
-		} else {
-			isTyping.value = false;
-			setTimeout(() => {
-				hideTyper.value = true;
-			}, 3000)
-		}
-		
-	}, 100)
-})(i);
-
+	let i = 0;
+	(function myTyper(i: number){
+		isTyping.value = true;
+		setTimeout(()=> {
+			typerArray.value.push(msgArray[i]);
+			message.value = typerArray.value.join("");
+			i++
+			
+			if (i <= msgArray.length) {
+				myTyper(i);
+			} else {
+				isTyping.value = false;
+				setTimeout(() => {
+					hideTyper.value = true;
+				}, 3000)
+			}
+		}, 100)
+	})(i);
 })
 </script>
 

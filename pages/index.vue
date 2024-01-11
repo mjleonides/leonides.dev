@@ -5,7 +5,8 @@
 			<div class="intro-container">
 				<div class="intro-section">
 					<img
-						width="256"
+						class="avi"
+						width="200"
 						src="~/assets/images/avi.jpeg"
 						alt="Head shot of Mike Leonides smiling in front of greenery. He is quite gorgeous."
 					/>
@@ -16,12 +17,12 @@
 						technology for the common good.
 					</p>
 					<div class="actions-container">
-						<p>
-							<a href="mailto:contact@leonides.dev"
-								>Click here to contact me.</a
-							>
-						</p>
-						<ResumeNotice v-if="!resumeLoading" />
+							<div>
+								<a href="mailto:contact@leonides.dev"
+									>Click here to contact me.</a
+								>
+							</div>
+						<ResumeNotice v-if="!resumeLoading"/>
 					</div>
 				</div>
 			</div>
@@ -58,6 +59,10 @@ onMounted(async () => {
 	justify-content: center;
 }
 
+.intro-section {
+	height: 400px;
+}
+
 h1 {
 	font-size: calc(1rem + 0.5vw);
 	margin: 1rem 0;
@@ -66,9 +71,19 @@ h1 {
 .actions-container {
 	display: inline-flex;
 	align-items: center;
+	gap: 1ch;
 
-	p {
-		margin-right: 1ch;
+	// a {
+	// 	margin-right: 1ch;
+	// }
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+		align-items: flex-start;
 	}
+}
+
+.avi {
+	max-width: 40vw;
 }
 </style>
